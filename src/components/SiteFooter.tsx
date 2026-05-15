@@ -21,7 +21,8 @@ export default function SiteFooter() {
         <div>
           <h4 className="font-display font-semibold mb-3 text-sm">Navigation</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/cours" className="hover:text-primary">Cours interactif</Link></li>
+            <li><Link to="/modules" className="hover:text-primary">Modules</Link></li>
+            <li><Link to="/cours" className="hover:text-primary">Cours interactifs</Link></li>
             <li><Link to="/quiz" className="hover:text-primary">Quiz</Link></li>
             <li><Link to="/flashcards" className="hover:text-primary">Flashcards</Link></li>
             <li><Link to="/glossaire" className="hover:text-primary">Glossaire SEO</Link></li>
@@ -31,9 +32,9 @@ export default function SiteFooter() {
           <h4 className="font-display font-semibold mb-3 text-sm">Programme</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Module 1 — Architecture technique</li>
-            <li>Core Web Vitals 2026</li>
-            <li>JavaScript SEO</li>
+            <li>Module 2 — Stratégie de contenu & EEAT</li>
             <li>Cocon sémantique 2.0</li>
+            <li>IA générative & SEO</li>
           </ul>
         </div>
         <div>
@@ -41,14 +42,14 @@ export default function SiteFooter() {
           <div className="flex items-center gap-3 glass rounded-xl p-3">
             <img src={logoCapri} alt="CapriAI Bi'hOux" className="h-12 w-20 rounded object-cover" />
             <div className="text-xs">
-              <div className="text-gradient font-bold">CapriAI Bi'hOux</div>
-              <div className="text-muted-foreground">Assistant pédagogique IA</div>
+              <div className="text-gradient font-bold">Miandrisoa Hoby RANDRIATSARAFARA</div>
+              <div className="text-muted-foreground">Enseignant - Formateur ⁕ Informatique/IA</div>
             </div>
           </div>
         </div>
       </div>
       <div className="border-t border-border/30 py-4 text-center text-xs text-muted-foreground">
-        © 2026 ENI · Mr RANDRIATSARAFARA Miandrisoa Hoby — Plateforme pédagogique CapriAI Bi'hOux
+        © 2026 ENI · Plateforme pédagogique SEO — Université de Fianarantsoa
       </div>
     </footer>
   );

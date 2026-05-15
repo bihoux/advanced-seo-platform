@@ -12,10 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as ModulesRouteImport } from './routes/modules'
 import { Route as GlossaireRouteImport } from './routes/glossaire'
-import { Route as FormateurRouteImport } from './routes/formateur'
 import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as CoursRouteImport } from './routes/cours'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CoursIndexRouteImport } from './routes/cours.index'
+import { Route as CoursModuleIdRouteImport } from './routes/cours.$moduleId'
 
 const QuizRoute = QuizRouteImport.update({
   id: '/quiz',
@@ -30,11 +31,6 @@ const ModulesRoute = ModulesRouteImport.update({
 const GlossaireRoute = GlossaireRouteImport.update({
   id: '/glossaire',
   path: '/glossaire',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormateurRoute = FormateurRouteImport.update({
-  id: '/formateur',
-  path: '/formateur',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FlashcardsRoute = FlashcardsRouteImport.update({
@@ -52,34 +48,46 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoursIndexRoute = CoursIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CoursRoute,
+} as any)
+const CoursModuleIdRoute = CoursModuleIdRouteImport.update({
+  id: '/$moduleId',
+  path: '/$moduleId',
+  getParentRoute: () => CoursRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/cours': typeof CoursRoute
+  '/cours': typeof CoursRouteWithChildren
   '/flashcards': typeof FlashcardsRoute
-  '/formateur': typeof FormateurRoute
   '/glossaire': typeof GlossaireRoute
   '/modules': typeof ModulesRoute
   '/quiz': typeof QuizRoute
+  '/cours/$moduleId': typeof CoursModuleIdRoute
+  '/cours/': typeof CoursIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/cours': typeof CoursRoute
   '/flashcards': typeof FlashcardsRoute
-  '/formateur': typeof FormateurRoute
   '/glossaire': typeof GlossaireRoute
   '/modules': typeof ModulesRoute
   '/quiz': typeof QuizRoute
+  '/cours/$moduleId': typeof CoursModuleIdRoute
+  '/cours': typeof CoursIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/cours': typeof CoursRoute
+  '/cours': typeof CoursRouteWithChildren
   '/flashcards': typeof FlashcardsRoute
-  '/formateur': typeof FormateurRoute
   '/glossaire': typeof GlossaireRoute
   '/modules': typeof ModulesRoute
   '/quiz': typeof QuizRoute
+  '/cours/$moduleId': typeof CoursModuleIdRoute
+  '/cours/': typeof CoursIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -87,35 +95,36 @@ export interface FileRouteTypes {
     | '/'
     | '/cours'
     | '/flashcards'
-    | '/formateur'
     | '/glossaire'
     | '/modules'
     | '/quiz'
+    | '/cours/$moduleId'
+    | '/cours/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/cours'
     | '/flashcards'
-    | '/formateur'
     | '/glossaire'
     | '/modules'
     | '/quiz'
+    | '/cours/$moduleId'
+    | '/cours'
   id:
     | '__root__'
     | '/'
     | '/cours'
     | '/flashcards'
-    | '/formateur'
     | '/glossaire'
     | '/modules'
     | '/quiz'
+    | '/cours/$moduleId'
+    | '/cours/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CoursRoute: typeof CoursRoute
+  CoursRoute: typeof CoursRouteWithChildren
   FlashcardsRoute: typeof FlashcardsRoute
-  FormateurRoute: typeof FormateurRoute
   GlossaireRoute: typeof GlossaireRoute
   ModulesRoute: typeof ModulesRoute
   QuizRoute: typeof QuizRoute
@@ -144,13 +153,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GlossaireRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/formateur': {
-      id: '/formateur'
-      path: '/formateur'
-      fullPath: '/formateur'
-      preLoaderRoute: typeof FormateurRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/flashcards': {
       id: '/flashcards'
       path: '/flashcards'
@@ -172,14 +174,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cours/': {
+      id: '/cours/'
+      path: '/'
+      fullPath: '/cours/'
+      preLoaderRoute: typeof CoursIndexRouteImport
+      parentRoute: typeof CoursRoute
+    }
+    '/cours/$moduleId': {
+      id: '/cours/$moduleId'
+      path: '/$moduleId'
+      fullPath: '/cours/$moduleId'
+      preLoaderRoute: typeof CoursModuleIdRouteImport
+      parentRoute: typeof CoursRoute
+    }
   }
 }
 
+interface CoursRouteChildren {
+  CoursModuleIdRoute: typeof CoursModuleIdRoute
+  CoursIndexRoute: typeof CoursIndexRoute
+}
+
+const CoursRouteChildren: CoursRouteChildren = {
+  CoursModuleIdRoute: CoursModuleIdRoute,
+  CoursIndexRoute: CoursIndexRoute,
+}
+
+const CoursRouteWithChildren = CoursRoute._addFileChildren(CoursRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CoursRoute: CoursRoute,
+  CoursRoute: CoursRouteWithChildren,
   FlashcardsRoute: FlashcardsRoute,
-  FormateurRoute: FormateurRoute,
   GlossaireRoute: GlossaireRoute,
   ModulesRoute: ModulesRoute,
   QuizRoute: QuizRoute,

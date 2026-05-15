@@ -1,37 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { flashcards } from "@/data/module1";
+import { modulesRegistry } from "@/data/modules";
 import { ChevronLeft, ChevronRight, RefreshCw } from "lucide-react";
 
 export const Route = createFileRoute("/flashcards")({
   head: () => ({
     meta: [
       { title: "Flashcards — SEO Avancé · ENI" },
-      { name: "description", content: "Cartes de révision interactives sur les concepts clés du SEO technique avancé 2026." },
+      { name: "description", content: "Cartes de révision interactives sur les concepts clés du SEO technique, sémantique, EEAT et IA générative." },
       { property: "og:title", content: "Flashcards SEO 2026" },
-      { property: "og:description", content: "Mémorisez les concepts clés du Module 1." },
+      { property: "og:description", content: "Mémorisez les concepts clés des modules." },
     ],
   }),
   component: Flash,
 });
 
 function Flash() {
+  const [moduleSlug, setModuleSlug] = useState(modulesRegistry[0].slug);
+  const cards = useMemo(() => modulesRegistry.find(m => m.slug === moduleSlug)!.flashcards, [moduleSlug]);
   const [i, setI] = useState(0);
   const [flip, setFlip] = useState(false);
-  const c = flashcards[i];
-  const go = (d: number) => { setFlip(false); setI((i + d + flashcards.length) % flashcards.length); };
+  const c = cards[i];
+  const go = (d: number) => { setFlip(false); setI((v) => (v + d + cards.length) % cards.length); };
+  const switchModule = (s: string) => { setModuleSlug(s); setI(0); setFlip(false); };
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <div className="text-xs text-accent uppercase tracking-widest mb-2">Flashcards · Module 1</div>
+      <div className="text-xs text-accent uppercase tracking-widest mb-2">Flashcards</div>
       <h1 className="text-3xl md:text-4xl font-display font-bold mb-2">Cartes de révision</h1>
-      <p className="text-muted-foreground mb-8">Cliquez la carte pour la retourner. {i + 1} / {flashcards.length}</p>
+      <p className="text-muted-foreground mb-6">Cliquez la carte pour la retourner. {i + 1} / {cards.length}</p>
+
+      <div className="flex flex-wrap gap-2 mb-8">
+        {modulesRegistry.map(m => (
+          <button
+            key={m.slug}
+            onClick={() => switchModule(m.slug)}
+            className={`px-4 py-2 rounded-full text-sm transition ${m.slug === moduleSlug ? "bg-gradient-to-r from-primary to-accent text-primary-foreground glow-primary" : "glass text-muted-foreground hover:text-foreground"}`}
+          >
+            {m.info.code}
+          </button>
+        ))}
+      </div>
 
       <motion.div
-        key={i}
+        key={`${moduleSlug}-${i}`}
         onClick={() => setFlip(f => !f)}
-        className="cursor-pointer perspective"
+        className="cursor-pointer"
         style={{ perspective: "1200px" }}
       >
         <motion.div

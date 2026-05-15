@@ -1,27 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { quiz } from "@/data/module1";
+import { useMemo, useState } from "react";
+import { modulesRegistry } from "@/data/modules";
 import { CheckCircle2, XCircle, RotateCcw } from "lucide-react";
 
 export const Route = createFileRoute("/quiz")({
   head: () => ({
     meta: [
-      { title: "Quiz — SEO Avancé · ENI" },
-      { name: "description", content: "Quiz interactif pour valider vos acquis sur l'architecture SEO 2026." },
-      { property: "og:title", content: "Quiz interactif SEO 2026" },
-      { property: "og:description", content: "Validez vos connaissances sur le Module 1." },
+      { title: "Quiz interactifs — SEO Avancé · ENI" },
+      { name: "description", content: "Quiz interactifs par module pour valider vos acquis sur l'architecture technique, le SEO sémantique, l'EEAT et l'IA générative." },
+      { property: "og:title", content: "Quiz interactifs SEO 2026" },
+      { property: "og:description", content: "Validez vos connaissances module par module." },
     ],
   }),
   component: Quiz,
 });
 
 function Quiz() {
+  const [moduleSlug, setModuleSlug] = useState(modulesRegistry[0].slug);
+  const mod = modulesRegistry.find((m) => m.slug === moduleSlug)!;
+  const quiz = mod.quiz;
   const [i, setI] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
-
   const q = quiz[i];
+
+  const switchModule = (slug: string) => {
+    setModuleSlug(slug); setI(0); setPicked(null); setScore(0); setDone(false);
+  };
 
   const next = () => {
     if (picked === q.answer) setScore(s => s + 1);
@@ -31,10 +37,24 @@ function Quiz() {
   };
   const reset = () => { setI(0); setPicked(null); setScore(0); setDone(false); };
 
+  const percent = useMemo(() => Math.round(((i + 1) / quiz.length) * 100), [i, quiz.length]);
+
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <div className="text-xs text-accent uppercase tracking-widest mb-2">Quiz · Module 1</div>
-      <h1 className="text-3xl md:text-4xl font-display font-bold mb-8">Validez vos acquis</h1>
+      <div className="text-xs text-accent uppercase tracking-widest mb-2">Quiz interactifs</div>
+      <h1 className="text-3xl md:text-4xl font-display font-bold mb-6">Validez vos acquis</h1>
+
+      <div className="flex flex-wrap gap-2 mb-8">
+        {modulesRegistry.map(m => (
+          <button
+            key={m.slug}
+            onClick={() => switchModule(m.slug)}
+            className={`px-4 py-2 rounded-full text-sm transition ${m.slug === moduleSlug ? "bg-gradient-to-r from-primary to-accent text-primary-foreground glow-primary" : "glass text-muted-foreground hover:text-foreground"}`}
+          >
+            {m.info.code}
+          </button>
+        ))}
+      </div>
 
       {!done ? (
         <div className="glass-strong rounded-3xl p-8">
@@ -43,7 +63,7 @@ function Quiz() {
             <span>Score : <span className="text-primary font-bold">{score}</span></span>
           </div>
           <div className="h-1 rounded-full bg-white/5 overflow-hidden mb-6">
-            <div className="h-full bg-gradient-to-r from-primary to-accent" style={{ width: `${((i+1)/quiz.length)*100}%` }} />
+            <div className="h-full bg-gradient-to-r from-primary to-accent transition-all" style={{ width: `${percent}%` }} />
           </div>
 
           <h2 className="text-xl md:text-2xl font-display font-semibold mb-6">{q.q}</h2>
@@ -91,9 +111,9 @@ function Quiz() {
         <div className="glass-strong rounded-3xl p-10 text-center">
           <div className="text-6xl font-display font-bold text-gradient-primary">{score} / {quiz.length}</div>
           <p className="mt-4 text-muted-foreground">
-            {score === quiz.length ? "Excellent ! Vous maîtrisez le Module 1." : score >= quiz.length / 2 ? "Bon score ! Révisez les notions manquées." : "À retravailler — relisez le cours et réessayez."}
+            {score === quiz.length ? `Excellent ! Vous maîtrisez le ${mod.info.code}.` : score >= quiz.length / 2 ? "Bon score ! Révisez les notions manquées." : "À retravailler — relisez le cours et réessayez."}
           </p>
-          <div className="mt-6 flex gap-3 justify-center">
+          <div className="mt-6 flex flex-wrap gap-3 justify-center">
             <button onClick={reset} className="glass px-5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-white/10">
               <RotateCcw className="h-4 w-4" /> Recommencer
             </button>

@@ -5,12 +5,11 @@ import { Sparkles } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Accueil" },
-  { to: "/cours", label: "Cours" },
   { to: "/modules", label: "Modules" },
+  { to: "/cours", label: "Cours" },
   { to: "/quiz", label: "Quiz" },
   { to: "/flashcards", label: "Flashcards" },
   { to: "/glossaire", label: "Glossaire" },
-  { to: "/formateur", label: "Formateur" },
 ] as const;
 
 export default function SiteHeader() {
@@ -42,7 +41,7 @@ export default function SiteHeader() {
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden lg:flex items-center gap-2 text-xs text-muted-foreground glass px-3 py-1.5 rounded-full">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
-            Powered by <span className="text-gradient font-semibold">CapriAI Bi'hOux</span>
+            Powered by <span className="text-gradient font-semibold">Miandrisoa Hoby Randriatsarafara</span>
           </div>
           <img src={logoCapri} alt="CapriAI" className="h-9 w-14 rounded-md object-cover ring-1 ring-accent/30" />
         </div>
