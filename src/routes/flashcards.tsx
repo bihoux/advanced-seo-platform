@@ -8,10 +8,12 @@ export const Route = createFileRoute("/flashcards")({
   head: () => ({
     meta: [
       { title: "Flashcards — SEO Avancé · ENI" },
-      { name: "description", content: "Cartes de révision interactives sur les concepts clés du SEO technique, sémantique, EEAT et IA générative." },
+      { name: "description", content: "Cartes de révision interactives sur les concepts clés du SEO technique, sémantique, EEAT, données structurées et performance." },
       { property: "og:title", content: "Flashcards SEO 2026" },
       { property: "og:description", content: "Mémorisez les concepts clés des modules." },
+      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/flashcards" },
     ],
+    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/flashcards" }],
   }),
   component: Flash,
 });

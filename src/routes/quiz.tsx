@@ -7,10 +7,12 @@ export const Route = createFileRoute("/quiz")({
   head: () => ({
     meta: [
       { title: "Quiz interactifs — SEO Avancé · ENI" },
-      { name: "description", content: "Quiz interactifs par module pour valider vos acquis sur l'architecture technique, le SEO sémantique, l'EEAT et l'IA générative." },
+      { name: "description", content: "Quiz interactifs par module pour valider vos acquis : architecture technique, SEO sémantique, EEAT, données structurées, hreflang et performance." },
       { property: "og:title", content: "Quiz interactifs SEO 2026" },
       { property: "og:description", content: "Validez vos connaissances module par module." },
+      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/quiz" },
     ],
+    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/quiz" }],
   }),
   component: Quiz,
 });

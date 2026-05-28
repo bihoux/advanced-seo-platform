@@ -7,10 +7,12 @@ export const Route = createFileRoute("/glossaire")({
   head: () => ({
     meta: [
       { title: "Glossaire SEO — ENI" },
-      { name: "description", content: "Glossaire complet du SEO avancé 2026 : Core Web Vitals, cocon sémantique, EEAT, Passage Indexing, SGE et plus encore." },
+      { name: "description", content: "Glossaire complet du SEO avancé 2026 : Core Web Vitals, cocon sémantique, EEAT, Passage Indexing, JSON-LD, hreflang, HSTS et plus encore." },
       { property: "og:title", content: "Glossaire SEO 2026" },
       { property: "og:description", content: "Définitions clés du SEO technique et sémantique." },
+      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/glossaire" },
     ],
+    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/glossaire" }],
   }),
   component: Glo,
 });

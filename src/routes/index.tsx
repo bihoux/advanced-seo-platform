@@ -8,11 +8,13 @@ import { modulesRegistry } from "@/data/modules";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Accueil — SEO Avancé 2026 · ENI" },
+      { title: "Accueil — SEO Avancé 2026 · ENI · CapriAI Bi'hOux" },
       { name: "description", content: "Plateforme pédagogique premium de l'ENI sur la rédaction et l'optimisation SEO avancée 2026. Modules interactifs, slides, quiz, flashcards et glossaire." },
       { property: "og:title", content: "Rédaction & Optimisation SEO Avancée — ENI" },
       { property: "og:description", content: "Cours universitaire interactif sur le SEO technique, sémantique, EEAT et IA générative 2026." },
+      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
@@ -21,6 +23,7 @@ export const Route = createFileRoute("/")({
         name: "Rédaction et Optimisation SEO Avancée",
         description: "Cours universitaire en SEO technique, sémantique, EEAT et IA générative.",
         provider: { "@type": "CollegeOrUniversity", name: "École Nationale d'Informatique — Université de Fianarantsoa" },
+        hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", inLanguage: "fr" },
       }),
     }],
   }),
@@ -47,7 +50,7 @@ function Hero() {
       <div className="absolute top-20 left-10 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse-glow" />
       <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-accent/15 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
-      <div className="relative mx-auto max-w-7xl px-4 pt-20 pb-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative mx-auto max-w-7xl px-4 pt-12 sm:pt-20 pb-16 sm:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
@@ -58,7 +61,7 @@ function Hero() {
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-display font-bold leading-[1.05] tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] tracking-tight"
           >
             Rédaction &<br />
             <span className="text-gradient-primary">Optimisation SEO</span><br />
@@ -70,7 +73,7 @@ function Hero() {
           >
             Une plateforme universitaire immersive : architecture technique, Core Web Vitals, cocon sémantique 2.0, EEAT, Passage Indexing et IA générative hybride.
             <span className="block mt-2">
-              Powered by <span className="text-gradient font-semibold">MHR</span> — assistant pédagogique IA.
+              Powered by <span className="text-gradient font-semibold">CapriAI Bi'hOux</span> — assistant pédagogique IA.
             </span>
           </motion.p>
           <motion.div
@@ -100,7 +103,7 @@ function Hero() {
           className="relative"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 blur-3xl" />
-          <div className="relative glass-strong rounded-3xl p-8 ring-cyber space-y-5">
+          <div className="relative glass-strong rounded-3xl p-5 sm:p-8 ring-cyber space-y-5">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-xs text-accent uppercase tracking-widest">Programme</div>

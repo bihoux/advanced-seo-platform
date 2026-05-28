@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://https://redaction-et-optimisation-seo-avancee.netlify.app/sitemap.xml

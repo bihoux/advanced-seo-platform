@@ -11,19 +11,23 @@ export const Route = createFileRoute("/cours/$moduleId")({
     if (!m) throw notFound();
     return { module: m };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     const m = loaderData?.module;
     const title = m ? `${m.info.code} — ${m.info.title} · ENI` : "Cours — ENI";
     const desc = m
       ? `${m.info.code} du cours SEO Avancé 2026 : ${m.slides.length} slides interactifs, ${m.info.duration}.`
       : "Module pédagogique SEO Avancé 2026.";
+    const url = `https://seo-eni-with-hoby.lovable.app/cours/${params.moduleId}`;
     return {
       meta: [
         { title },
         { name: "description", content: desc },
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   notFoundComponent: () => (
@@ -46,7 +50,10 @@ function Cours() {
   const { slides, chapters, info } = m as NonNullable<typeof m>;
   const [i, setI] = useState(0);
   const [full, setFull] = useState(false);
-  const [navOpen, setNavOpen] = useState(true);
+  const [navOpen, setNavOpen] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return window.matchMedia("(min-width: 1024px)").matches;
+  });
 
   useEffect(() => { setI(0); }, [m.slug]);
 

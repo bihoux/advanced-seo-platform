@@ -10,7 +10,7 @@ export function SlideRenderer({ slide, index, total }: { slide: Slide; index: nu
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="glass-strong rounded-3xl p-6 md:p-12 min-h-[60vh] relative overflow-hidden"
+      className="glass-strong rounded-3xl p-4 sm:p-6 md:p-12 min-h-[60vh] relative overflow-hidden"
     >
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
@@ -27,7 +27,7 @@ export function SlideRenderer({ slide, index, total }: { slide: Slide; index: nu
         {slide.subtitle && (
           <div className="text-sm text-primary font-semibold mb-2 uppercase tracking-wider">{slide.subtitle}</div>
         )}
-        <h2 className="text-3xl md:text-5xl font-bold font-display mb-8 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-display mb-8 leading-tight">
           {slide.type === "intro" ? <span className="text-gradient-primary">{slide.title}</span> : slide.title}
         </h2>
 

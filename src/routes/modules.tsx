@@ -6,10 +6,12 @@ export const Route = createFileRoute("/modules")({
   head: () => ({
     meta: [
       { title: "Modules — SEO Avancé · ENI" },
-      { name: "description", content: "Programme universitaire complet : architecture technique, stratégie de contenu avancée, EEAT, IA générative — cours SEO Avancé 2026 de l'ENI." },
+      { name: "description", content: "Programme universitaire complet : architecture technique, stratégie de contenu avancée, EEAT, données structurées, hreflang et performance — cours SEO Avancé 2026 de l'ENI." },
       { property: "og:title", content: "Modules — SEO Avancé 2026" },
       { property: "og:description", content: "Programme universitaire du cours SEO avancé de l'ENI." },
+      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/modules" },
     ],
+    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/modules" }],
   }),
   component: Modules,
 });

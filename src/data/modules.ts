@@ -1,5 +1,6 @@
 import { moduleInfo, chapters, slides, quiz, flashcards, glossary } from "./module1";
 import { moduleInfo2, chapters2, slides2, quiz2, flashcards2, glossary2 } from "./module2";
+import { moduleInfo3, chapters3, slides3, quiz3, flashcards3, glossary3 } from "./module3";
 import type { Slide } from "./module1";
 
 export type ModuleData = {
@@ -34,12 +35,22 @@ export const modulesRegistry: ModuleData[] = [
     flashcards: flashcards2,
     glossary: glossary2,
   },
+  {
+    slug: "module-3",
+    status: "available",
+    info: moduleInfo3,
+    chapters: chapters3,
+    slides: slides3,
+    quiz: quiz3,
+    flashcards: flashcards3,
+    glossary: glossary3,
+  },
 ];
 
 export const upcomingModules = [
-  { code: "Module 3", title: "SEO sémantique avancé & graphes de connaissance" },
   { code: "Module 4", title: "Netlinking moderne, autorité & relations digitales" },
-  { code: "Module 5", title: "SEO international, multi-langue & hreflang" },
+  { code: "Module 5", title: "SEO international avancé & sites multi-pays" },
+  { code: "Module 6", title: "SEO sémantique avancé & graphes de connaissance" },
 ];
 
 export const getModule = (slug: string) => modulesRegistry.find((m) => m.slug === slug);
