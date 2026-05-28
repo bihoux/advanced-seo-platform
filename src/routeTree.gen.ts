@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as ModulesRouteImport } from './routes/modules'
 import { Route as GlossaireRouteImport } from './routes/glossaire'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as CoursIndexRouteImport } from './routes/cours.index'
 import { Route as CoursModuleIdRouteImport } from './routes/cours.$moduleId'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const QuizRoute = QuizRouteImport.update({
   id: '/quiz',
   path: '/quiz',
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/glossaire': typeof GlossaireRoute
   '/modules': typeof ModulesRoute
   '/quiz': typeof QuizRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/cours/$moduleId': typeof CoursModuleIdRoute
   '/cours/': typeof CoursIndexRoute
 }
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/glossaire': typeof GlossaireRoute
   '/modules': typeof ModulesRoute
   '/quiz': typeof QuizRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/cours/$moduleId': typeof CoursModuleIdRoute
   '/cours': typeof CoursIndexRoute
 }
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/glossaire': typeof GlossaireRoute
   '/modules': typeof ModulesRoute
   '/quiz': typeof QuizRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/cours/$moduleId': typeof CoursModuleIdRoute
   '/cours/': typeof CoursIndexRoute
 }
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/glossaire'
     | '/modules'
     | '/quiz'
+    | '/sitemap.xml'
     | '/cours/$moduleId'
     | '/cours/'
   fileRoutesByTo: FileRoutesByTo
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/glossaire'
     | '/modules'
     | '/quiz'
+    | '/sitemap.xml'
     | '/cours/$moduleId'
     | '/cours'
   id:
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/glossaire'
     | '/modules'
     | '/quiz'
+    | '/sitemap.xml'
     | '/cours/$moduleId'
     | '/cours/'
   fileRoutesById: FileRoutesById
@@ -128,10 +140,18 @@ export interface RootRouteChildren {
   GlossaireRoute: typeof GlossaireRoute
   ModulesRoute: typeof ModulesRoute
   QuizRoute: typeof QuizRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/quiz': {
       id: '/quiz'
       path: '/quiz'
@@ -210,6 +230,7 @@ const rootRouteChildren: RootRouteChildren = {
   GlossaireRoute: GlossaireRoute,
   ModulesRoute: ModulesRoute,
   QuizRoute: QuizRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

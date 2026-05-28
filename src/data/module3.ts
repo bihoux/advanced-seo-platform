@@ -1,23 +1,21 @@
-import img1 from "@/assets/pdf3/img_1.jpg";
+import img1 from "@/assets/pdf3/img_1.webp";
 import img2 from "@/assets/pdf3/img_2.jpg";
 import img3 from "@/assets/pdf3/img_3.jpg";
-import img4 from "@/assets/pdf3/img_4.jpg";
+import img4 from "@/assets/pdf3/img_4.webp";
 import img5 from "@/assets/pdf3/img_5.jpg";
-import img6 from "@/assets/pdf3/img_6.jpg";
-import img7 from "@/assets/pdf3/img_7.jpg";
-import img8 from "@/assets/pdf3/img_8.jpg";
-import img9 from "@/assets/pdf3/img_9.jpg";
-import img10 from "@/assets/pdf3/img_10.jpg";
-import img11 from "@/assets/pdf3/img_11.jpg";
-import img12 from "@/assets/pdf3/img_12.jpg";
-import img13 from "@/assets/pdf3/img_13.jpg";
-import img14 from "@/assets/pdf3/img_14.jpg";
-import img15 from "@/assets/pdf3/img_15.jpg";
-import img17 from "@/assets/pdf3/img_17.jpg";
+import img05 from "@/assets/pdf3/img_05.webp";
+import img6 from "@/assets/pdf3/img_6.webp";
+import img7 from "@/assets/pdf3/img_7.webp";
+import img8 from "@/assets/pdf3/img_8.webp";
+import img9 from "@/assets/pdf3/img_9.webp";
+import img10 from "@/assets/pdf3/img_10.webp";
+import img11 from "@/assets/pdf3/img_11.webp";
+import img12 from "@/assets/pdf3/img_12.webp";
+import img14 from "@/assets/pdf3/img_14.webp";
+import img15 from "@/assets/pdf3/img_15.webp";
+import img16 from "@/assets/pdf3/img_16.webp";
 import img19 from "@/assets/pdf3/img_19.jpg";
-import img21 from "@/assets/pdf3/img_21.jpg";
 import type { Slide } from "./module1";
-
 export const moduleInfo3 = {
   code: "Module 3",
   title: "Optimisation technique avancée : données structurées, internationalisation et performance",
@@ -79,7 +77,8 @@ export const slides3: Slide[] = [
     chapter: "schema",
     title: "1.1 Rappel des formats et bonnes pratiques",
     type: "content",
-    image: img3,
+    image: img5,
+    
     content: {
       lead: "Le format recommandé par Google est JSON-LD (JavaScript Object Notation for Linked Data). Il se place dans <head> ou à la fin du <body>.",
       principle: "Pourquoi « avancé » ?",
@@ -126,7 +125,7 @@ export const slides3: Slide[] = [
     title: "1.3 Exemple avancé — Article + Person + Organization",
     subtitle: "JSON-LD enrichi",
     type: "content",
-    image: img5,
+    image: img05,
     content: {
       lead: "Un Article moderne déclare son auteur (Person), son éditeur (Organization), son image, ses dates de publication et de modification, ainsi qu'un passage speakable pour les assistants vocaux.",
       code: `<script type="application/ld+json">
@@ -313,7 +312,6 @@ export const slides3: Slide[] = [
     chapter: "perf",
     title: "3.3 CDN, HTTP/2 et HTTP/3",
     type: "content",
-    image: img13,
     content: {
       groups: [
         { name: "CDN", items: ["Indispensable pour réduire la latence (serveurs proches des utilisateurs).", "Privilégier un CDN supportant preconnect et server push."] },
@@ -358,7 +356,7 @@ export const slides3: Slide[] = [
     chapter: "security",
     title: "4.3 Autres en-têtes utiles",
     type: "table",
-    image: img17,
+    image: img16,
     content: {
       headers: ["En-tête", "Rôle pour le SEO"],
       rows: [
@@ -390,7 +388,6 @@ export const slides3: Slide[] = [
     chapter: "synthese",
     title: "TP — travel-expert.com",
     type: "exercise",
-    image: img21,
     content: {
       contexte: "Vous êtes responsable SEO du site travel-expert.com, guide de voyage multilingue (français, anglais, allemand) avec plus de 5 000 pages (recettes locales, articles, fiches destinations).",
       taches: [
