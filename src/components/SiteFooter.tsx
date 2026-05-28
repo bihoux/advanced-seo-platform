@@ -33,6 +33,7 @@ export default function SiteFooter() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Module 1 — Architecture technique</li>
             <li>Module 2 — Stratégie de contenu & EEAT</li>
+            <li>Module 3 – SEO technique avancé : données structurées, i18n & performance</li>
             <li>Cocon sémantique 2.0</li>
             <li>IA générative & SEO</li>
           </ul>

@@ -2,7 +2,8 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logoEni from "@/assets/logo-eni.webp";
 import logoCapri from "@/assets/logo-capriai.webp";
-import { Sparkles, Menu, X } from "lucide-react";
+import { Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Accueil" },
@@ -51,8 +52,8 @@ export default function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
           <div className="hidden lg:flex items-center gap-2 text-xs text-muted-foreground glass px-3 py-1.5 rounded-full">
-            <Sparkles className="h-3.5 w-3.5 text-accent" />
-            Powered by <span className="text-gradient font-semibold">CapriAI Bi'hOux</span>
+            <Code2 className="h-3.5 w-3.5 text-accent" />
+            Powered by <span className="text-gradient font-semibold">M.H.Randriatsarafara</span>
           </div>
           <img src={logoCapri} alt="CapriAI Bi'hOux" className="hidden sm:block h-9 w-14 rounded-md object-cover ring-1 ring-accent/30" />
           <button

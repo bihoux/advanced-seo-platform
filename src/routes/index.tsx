@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Brain, Gauge, Layers, Network, Sparkles, Zap, Target, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Gauge, Layers, Network, Zap, Target, ShieldCheck, Laptop } from "lucide-react";
 import logoEni from "@/assets/logo-eni.webp";
 import logoCapri from "@/assets/logo-capriai.webp";
 import { modulesRegistry } from "@/data/modules";
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const ICONS: any = { Sparkles, Bot: Brain, Gauge, Network, Code2: Layers, Leaf: Zap, GraduationCap: BookOpen, Target, ShieldCheck, FileText: BookOpen };
+const ICONS: any = { Laptop, Bot: Brain, Gauge, Network, Code2: Layers, Leaf: Zap, GraduationCap: BookOpen, Target, ShieldCheck, FileText: BookOpen };
 
 function Home() {
   return (
@@ -56,7 +56,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs uppercase tracking-widest mb-6"
           >
-            <Sparkles className="h-3.5 w-3.5 text-accent" />
+            <Laptop className="h-3.5 w-3.5 text-accent" />
             <span className="text-muted-foreground">Plateforme pédagogique intelligente</span>
           </motion.div>
           <motion.h1
@@ -73,7 +73,7 @@ function Hero() {
           >
             Une plateforme universitaire immersive : architecture technique, Core Web Vitals, cocon sémantique 2.0, EEAT, Passage Indexing et IA générative hybride.
             <span className="block mt-2">
-              Powered by <span className="text-gradient font-semibold">CapriAI Bi'hOux</span> — assistant pédagogique IA.
+              Powered by <span className="text-gradient font-semibold">M. H. Randriatsarafara</span> — assistant pédagogique IA.
             </span>
           </motion.p>
           <motion.div
@@ -186,7 +186,7 @@ function ModulesShowcase() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {m.chapters.map((c, i) => {
-                const Icon = ICONS[c.icon] ?? Sparkles;
+                const Icon = ICONS[c.icon] ?? Laptop;
                 return (
                   <motion.div
                     key={c.id}
