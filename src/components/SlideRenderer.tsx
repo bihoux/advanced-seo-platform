@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { Slide } from "@/data/module1";
-import { CheckCircle2, AlertTriangle, Lightbulb, BadgeInfo , ArrowRight } from "lucide-react";
+import { CheckCircle2, AlertTriangle, Lightbulb, Sparkles, ArrowRight } from "lucide-react";
 
 export function SlideRenderer({ slide, index, total }: { slide: Slide; index: number; total: number }) {
   return (
@@ -10,7 +10,7 @@ export function SlideRenderer({ slide, index, total }: { slide: Slide; index: nu
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -30 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="glass-strong rounded-3xl p-4 sm:p-6 md:p-12 min-h-[60vh] relative overflow-hidden"
+      className="glass-strong rounded-3xl p-4 sm:p-6 md:p-12 min-h-[60vh] relative overflow-hidden min-w-0 max-w-full"
     >
       <div className="absolute inset-0 grid-bg opacity-30 pointer-events-none" />
       <div className="absolute -top-32 -right-32 w-96 h-96 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
@@ -60,7 +60,7 @@ function IntroSlide({ slide }: { slide: Slide }) {
         <motion.img
           src={slide.image}
           alt={slide.title}
-          className="rounded-2xl w-full ring-1 ring-border shadow-2xl animate-float"
+          className="rounded-2xl w-full max-w-full h-auto ring-1 ring-border shadow-2xl animate-float"
         />
       )}
     </div>
@@ -70,8 +70,9 @@ function IntroSlide({ slide }: { slide: Slide }) {
 function ContentSlide({ slide }: { slide: Slide }) {
   const c = slide.content;
   return (
-    <div className="grid md:grid-cols-5 gap-8">
-      <div className={`space-y-5 ${slide.image ? "md:col-span-3" : "md:col-span-5"}`}>
+    <div className="grid md:grid-cols-5 gap-8 min-w-0">
+      <div className={`space-y-5 min-w-0 ${slide.image ? "md:col-span-3" : "md:col-span-5"}`}>
+
         {c.lead && <p className="text-lg text-muted-foreground leading-relaxed">{c.lead}</p>}
         {c.callout && (
           <div className="glass border-l-4 border-primary p-4 rounded-r-xl flex gap-3">
@@ -107,13 +108,13 @@ function ContentSlide({ slide }: { slide: Slide }) {
           </div>
         )}
         {c.code && (
-          <pre className="glass p-4 rounded-xl overflow-x-auto text-sm font-mono text-accent whitespace-pre">
+          <pre className="glass p-4 rounded-xl overflow-x-auto max-w-full text-xs sm:text-sm font-mono text-accent whitespace-pre">
             {c.code}
           </pre>
         )}
         {c.rule && (
           <div className="glass border border-eni-green/40 p-4 rounded-xl flex gap-3">
-            <BadgeInfo className="h-5 w-5 text-eni-green shrink-0 mt-0.5" />
+            <Sparkles className="h-5 w-5 text-eni-green shrink-0 mt-0.5" />
             <p className="text-sm">{c.rule}</p>
           </div>
         )}
@@ -169,10 +170,11 @@ function ContentSlide({ slide }: { slide: Slide }) {
         )}
       </div>
       {slide.image && (
-        <div className="md:col-span-2">
-          <img src={slide.image} alt={slide.title} className="rounded-2xl w-full ring-1 ring-border shadow-xl" />
+        <div className="md:col-span-2 min-w-0">
+          <img src={slide.image} alt={slide.title} className="rounded-2xl w-full max-w-full h-auto ring-1 ring-border shadow-xl" />
         </div>
       )}
+
     </div>
   );
 }
@@ -209,7 +211,7 @@ function TableSlide({ slide }: { slide: Slide }) {
           <p className="text-sm">{c.tip}</p>
         </div>
       )}
-      {slide.image && <img src={slide.image} alt="" className="rounded-2xl w-full max-h-[40vh] object-contain ring-1 ring-border mx-auto" />}
+      {slide.image && <img src={slide.image} alt="" className="rounded-2xl w-full max-w-full h-auto max-h-[40vh] object-contain ring-1 ring-border mx-auto" />}
     </div>
   );
 }
@@ -254,8 +256,8 @@ function ListSlide({ slide }: { slide: Slide }) {
 function ImageSlide({ slide }: { slide: Slide }) {
   const c = slide.content;
   return (
-    <div className="grid md:grid-cols-2 gap-8 items-center">
-      {slide.image && <img src={slide.image} alt={slide.title} className="rounded-2xl w-full ring-1 ring-border shadow-2xl" />}
+    <div className="grid md:grid-cols-2 gap-8 items-center min-w-0">
+      {slide.image && <img src={slide.image} alt={slide.title} className="rounded-2xl w-full max-w-full h-auto ring-1 ring-border shadow-2xl" />}
       <div className="space-y-4">
         {c?.steps && (
           <ol className="space-y-2">

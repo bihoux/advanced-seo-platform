@@ -57,6 +57,12 @@ function Cours() {
 
   useEffect(() => { setI(0); }, [m.slug]);
 
+  // Ensure sidebar is collapsed on mobile/tablet (handles SSR hydration mismatch)
+  useEffect(() => {
+    if (!window.matchMedia("(min-width: 1024px)").matches) setNavOpen(false);
+  }, []);
+
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === " ") setI((v) => Math.min(slides.length - 1, v + 1));
@@ -71,7 +77,7 @@ function Cours() {
   const progress = ((i + 1) / slides.length) * 100;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 overflow-x-hidden">
       <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
         <Link to="/cours" className="text-muted-foreground hover:text-primary">← Tous les modules</Link>
         <span className="text-muted-foreground">·</span>
@@ -106,9 +112,10 @@ function Cours() {
         <div className="h-full bg-gradient-to-r from-primary to-accent transition-all" style={{ width: `${progress}%` }} />
       </div>
 
-      <div className={`grid gap-6 ${navOpen ? "lg:grid-cols-[260px_1fr]" : ""}`}>
+      <div className={`grid gap-6 ${navOpen ? "lg:grid-cols-[260px_minmax(0,1fr)]" : ""}`}>
         {navOpen && (
-          <aside className="glass-strong rounded-2xl p-4 max-h-[80vh] overflow-y-auto sticky top-20 self-start">
+          <aside className="glass-strong rounded-2xl p-4 max-h-[60vh] lg:max-h-[80vh] overflow-y-auto lg:sticky lg:top-20 self-start">
+
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Sommaire</div>
             <div className="space-y-1">
               {chapters.map((c: { id: string; title: string }) => {
@@ -134,7 +141,7 @@ function Cours() {
           </aside>
         )}
 
-        <div className={full ? "fixed inset-0 z-50 bg-background overflow-y-auto p-4" : ""}>
+        <div className={full ? "fixed inset-0 z-50 bg-background overflow-y-auto p-4" : "min-w-0"}>
           <AnimatePresence mode="wait">
             <SlideRenderer key={slide.id} slide={slide} index={i} total={slides.length} />
           </AnimatePresence>
