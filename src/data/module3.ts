@@ -32,7 +32,7 @@ export const moduleInfo3 = {
 };
 
 export const chapters3 = [
-  { id: "intro", title: "Introduction", icon: "Sparkles" },
+  { id: "intro", title: "Introduction", icon: "BadgeInfo" },
   { id: "schema", title: "1. Données structurées avancées", icon: "Braces" },
   { id: "intl", title: "2. SEO international & hreflang", icon: "Globe" },
   { id: "perf", title: "3. Optimisation des ressources", icon: "Zap" },

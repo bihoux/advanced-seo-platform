@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Brain, Gauge, Layers, Network, Zap, Target, ShieldCheck, Laptop } from "lucide-react";
+import { ArrowRight, BookOpen, Brain, Gauge, Layers, Network, Laptop, Zap, Target, ShieldCheck } from "lucide-react";
 import logoEni from "@/assets/logo-eni.webp";
 import logoCapri from "@/assets/logo-capriai.webp";
 import { modulesRegistry } from "@/data/modules";
@@ -51,17 +51,17 @@ function Hero() {
       <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-accent/15 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "2s" }} />
 
       <div className="relative mx-auto max-w-7xl px-4 pt-12 sm:pt-20 pb-16 sm:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-        <div>
+        <div className="min-w-0 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs uppercase tracking-widest mb-6"
+            className="inline-flex items-center gap-2 glass px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-[10px] sm:text-xs uppercase tracking-widest mb-5 sm:mb-6 max-w-full"
           >
-            <Laptop className="h-3.5 w-3.5 text-accent" />
-            <span className="text-muted-foreground">Plateforme pédagogique intelligente</span>
+            <Laptop className="h-3.5 w-3.5 text-accent shrink-0" />
+            <span className="text-muted-foreground truncate">Plateforme pédagogique intelligente</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] tracking-tight"
+            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-[1.05] tracking-tight break-words"
           >
             Rédaction &<br />
             <span className="text-gradient-primary">Optimisation SEO</span><br />
@@ -69,22 +69,22 @@ function Hero() {
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
-            className="mt-6 text-lg text-muted-foreground max-w-xl leading-relaxed"
+            className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed break-words"
           >
             Une plateforme universitaire immersive : architecture technique, Core Web Vitals, cocon sémantique 2.0, EEAT, Passage Indexing et IA générative hybride.
             <span className="block mt-2">
-              Powered by <span className="text-gradient font-semibold">M. H. Randriatsarafara</span> — assistant pédagogique IA.
+              Powered by <span className="text-gradient font-semibold">CapriAI Bi'hOux</span> — assistant pédagogique IA.
             </span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-            className="mt-8 flex flex-wrap gap-3"
+            className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3"
           >
-            <Link to="/cours" className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent px-6 py-3 rounded-xl font-semibold text-primary-foreground glow-primary hover:scale-[1.03] transition">
+            <Link to="/cours" className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-accent px-6 py-3 rounded-xl font-semibold text-primary-foreground glow-primary hover:scale-[1.03] transition w-full sm:w-auto">
               Commencer un cours
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition" />
             </Link>
-            <Link to="/modules" className="inline-flex items-center gap-2 glass px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition">
+            <Link to="/modules" className="inline-flex items-center justify-center gap-2 glass px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition w-full sm:w-auto">
               Explorer les modules
             </Link>
           </motion.div>
@@ -100,7 +100,7 @@ function Hero() {
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
-          className="relative"
+          className="relative min-w-0 w-full"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 blur-3xl" />
           <div className="relative glass-strong rounded-3xl p-5 sm:p-8 ring-cyber space-y-5">

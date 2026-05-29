@@ -114,7 +114,7 @@ function ContentSlide({ slide }: { slide: Slide }) {
         )}
         {c.rule && (
           <div className="glass border border-eni-green/40 p-4 rounded-xl flex gap-3">
-            <Sparkles className="h-5 w-5 text-eni-green shrink-0 mt-0.5" />
+            <BadgeInfo className="h-5 w-5 text-eni-green shrink-0 mt-0.5" />
             <p className="text-sm">{c.rule}</p>
           </div>
         )}
