@@ -15,7 +15,7 @@ export default function SiteFooter() {
             </div>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            École Nationale d'Informatique — formation universitaire en informatique, IA et systèmes web.
+            École Nationale d'Informatique — Pépinière des élites informaticiennes.
           </p>
         </div>
         <div>

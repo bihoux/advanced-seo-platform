@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { Slide } from "@/data/module1";
-import { CheckCircle2, AlertTriangle, Lightbulb, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle2, AlertTriangle, Lightbulb, BadgeInfo , ArrowRight } from "lucide-react";
 
 export function SlideRenderer({ slide, index, total }: { slide: Slide; index: number; total: number }) {
   return (
@@ -113,7 +113,7 @@ function ContentSlide({ slide }: { slide: Slide }) {
         )}
         {c.rule && (
           <div className="glass border border-eni-green/40 p-4 rounded-xl flex gap-3">
-            <Sparkles className="h-5 w-5 text-eni-green shrink-0 mt-0.5" />
+            <BadgeInfo className="h-5 w-5 text-eni-green shrink-0 mt-0.5" />
             <p className="text-sm">{c.rule}</p>
           </div>
         )}
