@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { Slide } from "@/data/module1";
-import { CheckCircle2, AlertTriangle, Lightbulb, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle2, AlertTriangle, Lightbulb, BadgeInfo, ArrowRight } from "lucide-react";
 
 export function SlideRenderer({ slide, index, total }: { slide: Slide; index: number; total: number }) {
   return (
