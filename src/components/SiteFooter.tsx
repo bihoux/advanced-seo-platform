@@ -15,7 +15,7 @@ export default function SiteFooter() {
             </div>
           </div>
           <p className="text-xs text-muted-foreground leading-relaxed">
-            École Nationale d'Informatique — Pépinière des élites informaticiennes.
+            École Nationale d'Informatique — La pépinière des élites informaticiennes
           </p>
         </div>
         <div>
@@ -33,9 +33,9 @@ export default function SiteFooter() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Module 1 — Architecture technique</li>
             <li>Module 2 — Stratégie de contenu & EEAT</li>
-            <li>Module 3 – SEO technique avancé : données structurées, i18n & performance</li>
-            <li>Cocon sémantique 2.0</li>
-            <li>IA générative & SEO</li>
+            <li>Module 3 — Données structurées & performance</li>
+            <li>Module 4 — Netlinking & popularité</li>
+            <li>Module 5 — SEO à l’ère de l’IA</li>
           </ul>
         </div>
         <div>
@@ -43,14 +43,14 @@ export default function SiteFooter() {
           <div className="flex items-center gap-3 glass rounded-xl p-3">
             <img src={logoCapri} alt="CapriAI Bi'hOux" className="h-12 w-20 rounded object-cover" />
             <div className="text-xs">
-              <div className="text-gradient font-bold">Miandrisoa Hoby RANDRIATSARAFARA</div>
-              <div className="text-muted-foreground">Enseignant - Formateur ⁕ Informatique/IA</div>
+              <div className="text-gradient font-bold">M.H.Randriatsarafara</div>
+              <div className="text-muted-foreground">Doctorant & Enseignant en informatique</div>
             </div>
           </div>
         </div>
       </div>
       <div className="border-t border-border/30 py-4 text-center text-xs text-muted-foreground">
-        © 2026 ENI · Plateforme pédagogique SEO — Université de Fianarantsoa
+        © 2026 M. H. Randriatsarafara — Plateforme pédagogique SEO · ENI, Université de Fianarantsoa
       </div>
     </footer>
   );

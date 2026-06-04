@@ -46,11 +46,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SEO Avancé 2026 — Plateforme pédagogique ENI · CapriAI Bi'hOux" },
+      { title: "SEO Avancé 2026 — Plateforme pédagogique ENI · Miandrisoa Hoby RANDRIATSARAFARA" },
       { name: "description", content: "Plateforme e-learning premium de l'ENI sur la rédaction et l'optimisation SEO avancée 2026 : Core Web Vitals, cocon sémantique, JavaScript SEO, green SEO." },
       { name: "author", content: "Mr RANDRIATSARAFARA Miandrisoa Hoby — ENI" },
       { property: "og:title", content: "Rédaction & Optimisation SEO Avancée — ENI" },
-      { property: "og:description", content: "Cours universitaire interactif sur le SEO technique avancé 2026, propulsé par CapriAI Bi'hOux." },
+      { property: "og:description", content: "Cours universitaire interactif sur le SEO technique avancé 2026, propulsé par M.H. Randriatsarafara." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

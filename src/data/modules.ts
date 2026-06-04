@@ -1,6 +1,8 @@
 import { moduleInfo, chapters, slides, quiz, flashcards, glossary } from "./module1";
 import { moduleInfo2, chapters2, slides2, quiz2, flashcards2, glossary2 } from "./module2";
 import { moduleInfo3, chapters3, slides3, quiz3, flashcards3, glossary3 } from "./module3";
+import { moduleInfo4, chapters4, slides4, quiz4, flashcards4, glossary4 } from "./module4";
+import { moduleInfo5, chapters5, slides5, quiz5, flashcards5, glossary5 } from "./module5";
 import type { Slide } from "./module1";
 
 export type ModuleData = {
@@ -45,12 +47,31 @@ export const modulesRegistry: ModuleData[] = [
     flashcards: flashcards3,
     glossary: glossary3,
   },
+  {
+    slug: "module-4",
+    status: "available",
+    info: moduleInfo4,
+    chapters: chapters4,
+    slides: slides4,
+    quiz: quiz4,
+    flashcards: flashcards4,
+    glossary: glossary4,
+  },
+  {
+    slug: "module-5",
+    status: "available",
+    info: moduleInfo5,
+    chapters: chapters5,
+    slides: slides5,
+    quiz: quiz5,
+    flashcards: flashcards5,
+    glossary: glossary5,
+  },
 ];
 
 export const upcomingModules = [
-  { code: "Module 4", title: "Netlinking moderne, autorité & relations digitales" },
-  { code: "Module 5", title: "SEO international avancé & sites multi-pays" },
   { code: "Module 6", title: "SEO sémantique avancé & graphes de connaissance" },
+  { code: "Module 7", title: "SEO local & Maps avancés" },
 ];
 
 export const getModule = (slug: string) => modulesRegistry.find((m) => m.slug === slug);

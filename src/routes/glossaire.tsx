@@ -10,9 +10,9 @@ export const Route = createFileRoute("/glossaire")({
       { name: "description", content: "Glossaire complet du SEO avancé 2026 : Core Web Vitals, cocon sémantique, EEAT, Passage Indexing, JSON-LD, hreflang, HSTS et plus encore." },
       { property: "og:title", content: "Glossaire SEO 2026" },
       { property: "og:description", content: "Définitions clés du SEO technique et sémantique." },
-      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/glossaire" },
+      { property: "og:url", content: "https://redaction-et-optimisation-seo-avancee.netlify.app/glossaire" },
     ],
-    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/glossaire" }],
+    links: [{ rel: "canonical", href: "https://redaction-et-optimisation-seo-avancee.netlify.app/glossaire" }],
   }),
   component: Glo,
 });

@@ -8,13 +8,13 @@ import { modulesRegistry } from "@/data/modules";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Accueil — SEO Avancé 2026 · ENI · CapriAI Bi'hOux" },
+      { title: "Accueil — SEO Avancé 2026 · ENI · M.H. Randriatsarafara" },
       { name: "description", content: "Plateforme pédagogique premium de l'ENI sur la rédaction et l'optimisation SEO avancée 2026. Modules interactifs, slides, quiz, flashcards et glossaire." },
       { property: "og:title", content: "Rédaction & Optimisation SEO Avancée — ENI" },
       { property: "og:description", content: "Cours universitaire interactif sur le SEO technique, sémantique, EEAT et IA générative 2026." },
-      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/" },
+      { property: "og:url", content: "https://redaction-et-optimisation-seo-avancee.netlify.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://redaction-et-optimisation-seo-avancee.netlify.app/" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
@@ -73,7 +73,7 @@ function Hero() {
           >
             Une plateforme universitaire immersive : architecture technique, Core Web Vitals, cocon sémantique 2.0, EEAT, Passage Indexing et IA générative hybride.
             <span className="block mt-2">
-              Powered by <span className="text-gradient font-semibold">CapriAI Bi'hOux</span> — assistant pédagogique IA.
+              Powered by <span className="text-gradient font-semibold">M.H. Randriatsarafara</span> — assistant pédagogique IA.
             </span>
           </motion.p>
           <motion.div

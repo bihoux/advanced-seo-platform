@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { modulesRegistry } from "@/data/modules";
 
-const BASE_URL = "https://seo-eni-with-hoby.lovable.app";
+const BASE_URL = "https://redaction-et-optimisation-seo-avancee.netlify.app";
 
 interface SitemapEntry {
   path: string;

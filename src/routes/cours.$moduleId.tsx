@@ -17,7 +17,7 @@ export const Route = createFileRoute("/cours/$moduleId")({
     const desc = m
       ? `${m.info.code} du cours SEO Avancé 2026 : ${m.slides.length} slides interactifs, ${m.info.duration}.`
       : "Module pédagogique SEO Avancé 2026.";
-    const url = `https://seo-eni-with-hoby.lovable.app/cours/${params.moduleId}`;
+    const url = `https://redaction-et-optimisation-seo-avancee.netlify.app/cours/${params.moduleId}`;
     return {
       meta: [
         { title },

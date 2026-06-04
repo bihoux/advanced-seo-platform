@@ -11,9 +11,9 @@ export const Route = createFileRoute("/flashcards")({
       { name: "description", content: "Cartes de révision interactives sur les concepts clés du SEO technique, sémantique, EEAT, données structurées et performance." },
       { property: "og:title", content: "Flashcards SEO 2026" },
       { property: "og:description", content: "Mémorisez les concepts clés des modules." },
-      { property: "og:url", content: "https://seo-eni-with-hoby.lovable.app/flashcards" },
+      { property: "og:url", content: "https://redaction-et-optimisation-seo-avancee.netlify.app/flashcards" },
     ],
-    links: [{ rel: "canonical", href: "https://seo-eni-with-hoby.lovable.app/flashcards" }],
+    links: [{ rel: "canonical", href: "https://redaction-et-optimisation-seo-avancee.netlify.app/flashcards" }],
   }),
   component: Flash,
 });
