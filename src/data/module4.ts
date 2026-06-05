@@ -30,7 +30,7 @@ export const moduleInfo4 = {
 
 export const chapters4 = [
   { id: "intro", title: "Introduction", icon: "Sparkles" },
-  { id: "etat", title: "1. État des lieux 2025", icon: "Compass" },
+  { id: "etat", title: "1. État des lieux 2026", icon: "Compass" },
   { id: "strategies", title: "2. Stratégies avancées", icon: "Link2" },
   { id: "audit", title: "3. Audit du profil de liens", icon: "Search" },
   { id: "impact", title: "4. Mesure d'impact business", icon: "TrendingUp" },
@@ -72,11 +72,11 @@ export const slides4: Slide[] = [
   {
     id: "m4-s4",
     chapter: "etat",
-    title: "1.1 Anciennes pratiques vs réalité 2025",
+    title: "1.1 Anciennes pratiques vs réalité 2026",
     type: "table",
     image: img3,
     content: {
-      headers: ["Anciennes pratiques", "Réalité 2025"],
+      headers: ["Anciennes pratiques", "Réalité 2026"],
       rows: [
         ["Compter le nombre total de backlinks", "Seules la qualité et la pertinence thématique comptent vraiment"],
         ["Acheter des liens sur des plateformes", "Risque de pénalité manuelle (notification dans GSC)"],
@@ -102,7 +102,7 @@ export const slides4: Slide[] = [
         "Proximité sémantique : le texte autour du lien doit être en rapport avec le sujet cible.",
         "Trafic généré : un lien qui apporte des visiteurs réels est un signal positif.",
       ],
-      warning: "Nouveauté 2025 : les schémas de guest blogging massif (même article sur 50 sites) sont désormais pénalisés.",
+      warning: "Nouveauté 2026 : les schémas de guest blogging massif (même article sur 50 sites) sont désormais pénalisés.",
     },
   },
   {
@@ -117,7 +117,7 @@ export const slides4: Slide[] = [
         ["Étude originale / données exclusives", "« Analyse des 10 000 premiers résultats Google sur les snippets »", "Journalistes et bloggers citent la source de données"],
         ["Infographie dynamique / interactive", "Carte évolutive des prix de l'immobilier par région", "Attractive, facile à intégrer avec un embed"],
         ["Outil gratuit (calculateur, générateur)", "« Estimateur de budget SEO personnalisé »", "Les utilisateurs le partagent et les sites le recommandent"],
-        ["Avis d'expert relayé (digital PR)", "« Interview de 50 experts sur les tendances 2025 »", "Chaque expert cite l'article sur son propre site"],
+        ["Avis d'expert relayé (digital PR)", "« Interview de 50 experts sur les tendances 2026 »", "Chaque expert cite l'article sur son propre site"],
         ["Contenu polémique / pensée critique", "« Pourquoi les Core Web Vitals sont surévalués »", "Génère des réactions et des liens contradictoires"],
       ],
       tip: "Créez d'abord le contenu linkable, puis approchez les sites pertinents avec un message personnalisé : « voici une ressource qui pourrait enrichir votre article sur X ».",
@@ -355,7 +355,7 @@ export const slides4: Slide[] = [
 
 export const quiz4 = [
   {
-    q: "Quel critère est le plus déterminant pour la qualité d'un backlink en 2025 ?",
+    q: "Quel critère est le plus déterminant pour la qualité d'un backlink en 2026 ?",
     options: ["Le nombre total de backlinks", "La pertinence thématique du site source", "La couleur du lien", "Le nombre de mots-clés dans l'ancre"],
     answer: 1,
     explain: "Google valorise la pertinence thématique et l'autorité du site source bien plus que le volume total.",
@@ -373,7 +373,7 @@ export const quiz4 = [
     explain: "Un profil naturel comporte une part significative de nofollow (commentaires, forums, mentions).",
   },
   {
-    q: "Quelle pratique est désormais pénalisée par Google en 2025 ?",
+    q: "Quelle pratique est désormais pénalisée par Google en 2026 ?",
     options: ["Digital PR personnalisée", "Guest blogging massif sur 50 sites avec le même article", "Création d'études originales", "Broken link building éthique"],
     answer: 1,
     explain: "Google détecte les schémas de guest blogging massif via l'IA et pénalise les sites concernés.",
