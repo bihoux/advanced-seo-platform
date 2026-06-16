@@ -1,15 +1,10 @@
 import img1 from "@/assets/pdf4/img_1.webp";
-import img2 from "@/assets/pdf4/img_2.webp";
-import img3 from "@/assets/pdf4/img_3.webp";
 import img4 from "@/assets/pdf4/img_4.webp";
-import img5 from "@/assets/pdf4/img_5.webp";
-import img6 from "@/assets/pdf4/img_6.webp";
-import img7 from "@/assets/pdf4/img_7.webp";
 import img8 from "@/assets/pdf4/img_8.webp";
 import img9 from "@/assets/pdf4/img_9.webp";
 import img10 from "@/assets/pdf4/img_10.webp";
-import img11 from "@/assets/pdf4/img_11.webp";
 import img12 from "@/assets/pdf4/img_12.webp";
+import img3 from "@/assets/pdf4/img_3.webp";
 import type { Slide } from "./module1";
 
 export const moduleInfo4 = {
@@ -63,7 +58,6 @@ export const slides4: Slide[] = [
     chapter: "intro",
     title: "Pourquoi le netlinking a changé",
     type: "content",
-    image: img2,
     content: {
       lead: "Le netlinking reste l'un des piliers du SEO, mais les pratiques ont radicalement changé. Google pénalise désormais les schémas artificiels (PBN, achat de liens en masse) et valorise les liens éditoriaux naturels obtenus grâce à la qualité du contenu et à des relations presse authentiques.",
       callout: "La mesure de performance ne se limite plus au nombre de backlinks : pertinence thématique, ratio dofollow/nofollow, textes d'ancrage et impact business via des modèles d'attribution.",
@@ -74,7 +68,6 @@ export const slides4: Slide[] = [
     chapter: "etat",
     title: "1.1 Anciennes pratiques vs réalité 2026",
     type: "table",
-    image: img3,
     content: {
       headers: ["Anciennes pratiques", "Réalité 2026"],
       rows: [
@@ -110,7 +103,6 @@ export const slides4: Slide[] = [
     chapter: "strategies",
     title: "2.1 Link baiting 2.0 — contenus appâts à liens",
     type: "table",
-    image: img5,
     content: {
       headers: ["Type de contenu", "Exemple", "Pourquoi les sites linkent"],
       rows: [
@@ -128,7 +120,6 @@ export const slides4: Slide[] = [
     chapter: "strategies",
     title: "2.2 Digital PR — relations presse numériques",
     type: "content",
-    image: img6,
     content: {
       lead: "Obtenir des mentions dans des médias en ligne, blogs influents ou sites d'actualité.",
       steps: [
@@ -145,7 +136,6 @@ export const slides4: Slide[] = [
     chapter: "strategies",
     title: "2.3 Guest blogging sélectif",
     type: "content",
-    image: img7,
     content: {
       lead: "Oubliez les 100 articles invités par mois. Privilégiez quelques publications très qualitatives sur des sites que vous admirez.",
       groups: [
@@ -227,7 +217,6 @@ export const slides4: Slide[] = [
     chapter: "audit",
     title: "3.3 Analyse concurrentielle",
     type: "content",
-    image: img11,
     content: {
       lead: "Pour trouver des opportunités, examinez les profils de vos concurrents directs (mêmes mots-clés).",
       items: [
@@ -261,6 +250,7 @@ export const slides4: Slide[] = [
     chapter: "impact",
     title: "4.2 KPIs off-site pour le reporting",
     type: "table",
+    image: img3,    
     content: {
       headers: ["KPI", "Fréquence", "Objectif"],
       rows: [
