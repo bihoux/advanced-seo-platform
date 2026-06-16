@@ -2,15 +2,12 @@ import img1 from "@/assets/pdf5/img_1.webp";
 import img2 from "@/assets/pdf5/img_2.webp";
 import img3 from "@/assets/pdf5/img_3.webp";
 import img4 from "@/assets/pdf5/img_4.webp";
-import img5 from "@/assets/pdf5/img_5.webp";
 import img6 from "@/assets/pdf5/img_6.webp";
 import img7 from "@/assets/pdf5/img_7.webp";
 import img8 from "@/assets/pdf5/img_8.webp";
 import img9 from "@/assets/pdf5/img_9.webp";
 import img10 from "@/assets/pdf5/img_10.webp";
 import img11 from "@/assets/pdf5/img_11.webp";
-import img12 from "@/assets/pdf5/img_12.webp";
-import img13 from "@/assets/pdf5/img_13.webp";
 import img14 from "@/assets/pdf5/img_14.webp";
 import type { Slide } from "./module1";
 
@@ -93,7 +90,6 @@ export const slides5: Slide[] = [
     chapter: "sge",
     title: "1.2 Impact sur les clics et le comportement",
     type: "table",
-    image: img4,
     content: {
       headers: ["Métrique", "Avant SGE", "Avec SGE", "Conséquence SEO"],
       rows: [
@@ -108,7 +104,6 @@ export const slides5: Slide[] = [
     chapter: "sge",
     title: "1.3 Comment être cité par la SGE ?",
     type: "content",
-    image: img5,
     content: {
       lead: "Google ne dévoile pas l'algorithme, mais les analyses (Semrush, Authoritas) et brevets suggèrent plusieurs critères convergents.",
       items: [
@@ -143,7 +138,6 @@ export const slides5: Slide[] = [
     chapter: "eeat",
     title: "2.2 E-E-A-T pour un article de blog technique",
     type: "table",
-    image: img7,
     content: {
       headers: ["Critère", "Action"],
       rows: [
@@ -229,7 +223,6 @@ Dernière mise à jour : 10 juin 2025 (après vérification des Core Web Vitals)
     chapter: "ia",
     title: "3.3 Prompting avancé pour le SEO",
     type: "content",
-    image: img12,
     content: {
       lead: "Un bon prompt définit rôle, sujet, public, structure, contraintes E-E-A-T et longueur cible.",
       code: `Rôle : expert SEO technique.
@@ -250,6 +243,7 @@ Contraintes :
     chapter: "ia",
     title: "3.4 Détecter et corriger les hallucinations",
     type: "content",
+    image: img4,
     content: {
       lead: "L'IA peut inventer des citations d'experts inexistants, créer de toutes pièces des statistiques, attribuer de faux brevets ou articles.",
       steps: [
@@ -276,7 +270,6 @@ Contraintes :
     chapter: "kpis",
     title: "4.1 Indicateurs spécifiques SGE",
     type: "table",
-    image: img13,
     content: {
       headers: ["KPI", "Définition", "Outil de mesure"],
       rows: [
@@ -306,6 +299,7 @@ Contraintes :
     chapter: "kpis",
     title: "4.3 Tableau de bord avancé (Looker Studio)",
     type: "table",
+    image: img7,
     content: {
       headers: ["Source", "Données"],
       rows: [
